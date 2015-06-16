@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  h1= title
+  form(action='/', method='post')
+      label(for='departure') Departure City
+      p.labels
+        select#departure(name='departure')
+          option(selected='', disabled='', value='none') Choose a City
+          option(value='New York') New York
+          option(value='Chicago') Chicago
+          option(value='Los Angeles') Los Angeles
+      label(for='arrival') Arrival City
+      p.labels
+        select#arrival(name='arrival')
+          option(selected='', disabled='', value='none') Choose a City
+          option(value='New York') New York
+          option(value='Chicago') Chicago
+          option(value='Los Angeles') Los Angeles
+      label(for='bags') Number of checked bags ($25 / bag)
+      p.labels
+        input#bags(type='number', name='bags' min='0')
+      label(for='cabin') Class
+      p.labels
+        select#cabin(name='cabin')
+          option(value='Coach') Coach
+          option(value='Business') Business (+ $200)
+          option(value='First') First (+ $500)
+      p
+        input#wifi(type='checkbox', name='wifi')
+        label(for='wifi') Wifi ($12)
+      label(for='discount') Discount Code (case-sensitive, careful!)
+      p.labels
+        input#discount(type='text', name='discount')
+      p
+        button#calculate.calculate(type='submit') Calculate Price
+      p.youpay
+        | Your price is: $ #{price}
+        span#youpay(name='youpay')
