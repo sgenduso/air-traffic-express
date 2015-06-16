@@ -37,7 +37,7 @@ function (depCity, arrCity, discount, bags, cabin, wifi, youPay){
     cabinPrice = 0;
   } else if (cabin == "Business") {
     cabinPrice = 200;
-  } else if (classChoice == "First") {
+  } else if (cabin == "First") {
     cabinPrice = 500;
   }
 
